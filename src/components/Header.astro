@@ -1,0 +1,303 @@
+---
+
+---
+<header class="header">
+    <div class="header-container">
+        <div class="logo">
+            <h1>AskExperts</h1>
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/case">Case Study</a></li>
+                <li><a href="/team">Team</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+        <button popovertarget="login" class="login-btn">Login</button>
+         <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div id="login" popover="auto" class="login-popover">
+            <h2>Dashboard Login</h2>
+            <form>
+                <label for="email">Email address</label>
+                <input type="email" id="email" placeholder="" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="" required>
+                
+                <button type="submit" class="dashboard-btn">Go to dashboard</button>
+            </form>
+        </div>
+    </div>
+</header>
+
+<style>
+    .header{
+        background: rgba(27, 27, 27, 0.91);
+        backdrop-filter: blur(10.5px);
+        padding: 1rem 0;
+    }
+
+    .header-container{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+         position: relative; 
+    }
+
+    .logo h1{
+        color: var(--color-white);
+        font-size: 50px;
+        font-family: "Cabin", sans-serif;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .nav-list{
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-list a{
+        color: var(--color-white);
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    nav a:hover{
+        color: var(--color-yellow);
+        transition: .3s;
+    }
+
+    .login-btn{
+        background-color: var(--color-yellow);
+        color: var(--color-black);
+        border: none;
+        padding: 4px 16px;
+        border-radius: 20px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+     .mobile-menu-btn {
+        display: none;
+        flex-direction: column;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        gap: 4px;
+    }
+
+    .mobile-menu-btn span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--color-white);
+        transition: 0.3s;
+        border-radius: 2px;
+    }
+    .login-popover{
+        background-color: #181818;
+        border: none;
+        border-radius: 30px;
+        padding:80px 100px;
+        color: var(--color-white);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
+    .login-popover h2 {
+        margin: 0 0 2rem 0;
+        color: white;
+        font-size: 45px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 116%;
+        font-style: normal;
+    }
+    .login-popover form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+     .login-popover label {
+        color: white;
+        font-size: 16px;
+        margin-bottom: 0.5rem;
+    }
+    .login-popover input {
+        padding: 20px;
+        height: 59px;
+        border: 1px solid #E3E3E3;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: var(--color-white);
+        color: var(--color-black);
+        align-self: stretch;
+    }
+    .dashboard-btn {
+        background-color: var(--color-yellow);
+        color: var(--color-black);
+        border: none;
+        padding: 15px 56px;
+        border-radius: 42px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 16px;
+        gap: 10px;
+    }
+    /* Popover backdrop med blur */
+    [popover] {
+        opacity: 0;
+        translate: 0 -20%;
+        transition: .3s;
+        transition-property: opacity, display, overlay, translate;
+        transition-behavior: allow-discrete;
+  }
+
+   [popover]::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+        transition: .3s;
+        transition-property: backdrop-filter, display, overlay;
+        transition-behavior: allow-discrete;
+    }
+
+    :popover-open {
+        opacity: 1;
+        translate: 0 0;
+  
+  @starting-style {
+        opacity: 0;
+        translate: 0 -20%;
+}
+}
+ :popover-open::backdrop {
+        backdrop-filter: blur(8px);
+        
+        @starting-style {
+            backdrop-filter: blur(0px);
+        }
+    }
+
+    @media (max-width: 900px) and (min-width: 641px) {
+        .header-container {
+            gap: 1rem; /* Tilføj gap mellem elementer */
+        }
+
+        .nav-list {
+            gap: 2rem; /* Mindre gap i navigation */
+        }
+
+        .nav-list a {
+            font-size: 16px;
+        }
+
+        .login-btn {
+            order: 2;  /*Flyt login button til venstre side */
+            /* margin-right: auto; Push navigation til højre */
+            padding: 4px 16px;
+            font-size: 14px;
+        }
+
+        .logo {
+            order: -2; /* Logo forbliver først */
+        }
+
+        .nav {
+            order: 1; /* Navigation til højre */
+        }
+
+        .mobile-menu-btn {
+            order: 2; /* Hamburger menu til sidst */
+        }
+    }
+    /* Mobil */
+    @media (max-width: 800px){
+        .mobile-menu-btn{
+            display: flex;
+        }
+
+        .nav{
+            display: none;
+            position: absolute;
+            top: 100%;
+             left: 0;
+            right: 0;
+            background-color: rgba(27, 27, 27, 0.95);
+            backdrop-filter: blur(10.5px);
+            padding: 1rem;
+            border-radius: 0 0 10px 10px;
+            z-index: 999;
+        }
+
+        .nav.active {
+            display: block;
+        }
+
+        .nav-list {
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .login-btn {
+            display: none;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+        }
+        .login-popover {
+            padding: 40px 30px;
+            min-width: 320px;
+        }
+
+        .login-popover h2 {
+            font-size: 28px;
+        }
+
+        .login-popover input {
+            padding: 15px;
+            height: 50px;
+        }
+
+        .dashboard-btn {
+            padding: 12px 40px;
+            font-size: 14px;
+        }
+    }
+
+     /* Lille Mobil */
+    @media (max-width: 480px) {
+        .header-container {
+            padding: 0 0.5rem;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+        }
+
+        .login-popover {
+            padding: 30px 20px;
+            min-width: 280px;
+        }
+
+        .login-popover h2 {
+            font-size: 24px;
+        }
+    }
+</style>
+

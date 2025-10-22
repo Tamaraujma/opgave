@@ -1,5 +1,8 @@
 ---
 import "@styles/main.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
 ---
 
 <html lang="en">
@@ -14,8 +17,28 @@ import "@styles/main.css";
     </style>
   </head>
   <body>
+    <Header/>
     <slot />
+     <Footer />
   </body>
 </html>
 
-<style></style>
+<style>
+ :root {
+    --color-black: #2d2d2d;
+    --color-yellow: #FFCC4A;
+    --color-white: #FFFFFF;
+    --color-green: #4EAFAE;
+    --color-light-grey: #F5F5F5;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1;
+  }
+</style>

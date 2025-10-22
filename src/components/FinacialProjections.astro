@@ -1,0 +1,180 @@
+---
+//@ts-nocheck
+import Data from "@data/financialProjections.json";
+console.log(Data);
+---
+
+<section class="financial-projections">
+    <div class="container">
+        <div class="header">
+            <div class="title-section">
+                <h2>{Data.title}</h2>
+                <p>{Data.subtitle}</p>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="nav-btn prev">
+                    <img src="/src/icons/arrow-left.svg" alt="Previous" />
+                </button>
+                <button class="nav-btn next">
+                    <img src="/src/icons/arrow--right.svg" alt="Next" />
+                </button>
+            </div>
+        </div>
+
+        <div class="projections-container">
+            <div class="projections-scroll">
+                {Data.values.map((item) => (
+                    <div class="projection-card">
+                        <div class="card-icon">
+                            <img src={`/src/icons/${item.icon}.svg`} alt={item.title} />
+                        </div>
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+     .financial-projections {
+        background-color: var( --color-light-grey);
+        padding: 80px 0;
+    }
+     .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+     .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+     .title-section h2 {
+        font-size: 42px;
+        font-weight: 700;
+        color: var(--color-black);
+        margin-bottom: 10px;
+    }
+    .title-section p {
+        font-size: 16px;
+        color: var(--color-black);
+    }
+    .navigation-buttons {
+        display: flex;
+        gap: 10px; 
+    }
+    .nav-btn{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        padding: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .nav-btn.prev {
+        background-color: var(--color-black);
+        color: var(--color-white);
+    }
+
+    .nav-btn.next {
+        background-color: var(--color-yellow);
+        color: var(--color-black);
+    }
+
+    .nav-btn:hover {
+        transform: scale(1.05);
+    }
+
+   /* Scroll container */
+    .projections-container {
+        overflow: hidden;
+    }
+
+    .projections-scroll {
+        display: flex;
+        gap: 30px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding-bottom: 20px;
+    }
+    /* Custom scrollbar */
+    .projections-scroll::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .projections-scroll::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    .projections-scroll::-webkit-scrollbar-thumb {
+        background: darkgrey;
+        border-radius: 10px;
+    }
+
+    .projections-scroll::-webkit-scrollbar-thumb:hover {
+        background: darkgrey;
+    }
+    .projection-card {
+        background: #EBEBEB;
+        max-width: 1000px;
+        padding: 40px 30px;
+        border-radius: 12px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        min-width: 400px
+    }
+
+    .projection-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        background: var(--color-black);
+    }
+     .projection-card:hover h3,
+    .projection-card:hover p {
+        color: var(--color-white);
+    }
+    .projection-card:hover img{
+        background-color: var(--color-yellow);
+        fill: var(--color-yellow);
+    }
+    .card-icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+    .projection-card h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .projection-card p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #666;
+    }
+
+    @media (max-width: 768px) {
+        .projections-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .header {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+
+</style>

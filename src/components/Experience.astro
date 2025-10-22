@@ -1,0 +1,154 @@
+---
+import experienceData from "@data/experience.json";
+console.log(experienceData);
+---
+
+
+<section class="experience">
+    <div class="container">
+        <div class="experience-content">
+            <div class="experience-text">
+                <h4>EXPERIENCE</h4>
+                <h2>{experienceData.heading}</h2>
+                <h4>{experienceData.subheading}</h4>
+            </div>
+    
+            <div class="stats-container">
+                {experienceData.stats && experienceData.stats.map((stat) => (
+                    <div class="stat-item">
+                        <div class="progress-circle" style={`--percent: ${stat.value}`}>
+                            <span class="percentage">{stat.value}%</span>
+                        </div>
+                        <h3>{stat.label}</h3>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>
+  
+
+<style>
+    .experience{
+        background-color: var(--color-yellow);
+        padding: 80px 0;
+        color: var(--color-black);
+    }
+
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .experience-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .experience-text{
+        flex: 1;
+    }
+    .experience-text h4 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.experience-text h2 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--color-black);
+    max-width: 400px;
+}
+
+.experience-text p {
+    font-size: 16px;
+    color: var(--color-black);
+    opacity: 0.8;
+}
+
+.stats-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.stat-item {
+    text-align: center;
+}
+ .progress-circle {
+        --actualPercent: calc(var(--percent) * 1%);
+        --border-width: 4px;
+        position: relative;
+        aspect-ratio: 1;
+        width: 120px;
+        border-radius: 50%;
+        border: var(--border-width) solid transparent;
+        background: 
+            conic-gradient(var(--color-yellow) 0deg) padding-box,
+            conic-gradient(#fff var(--actualPercent), rgba(255,255,255,0.3) 0) border-box; 
+        display: grid;
+        place-items: center;
+        margin-bottom: 20px;
+    }
+
+ .progress-circle::before {
+        content: '';
+        grid-area: 1 / 1;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        background: var(--color-black);
+        position: absolute;
+        top: 2px;
+        left: 50%;
+        transform: translateX(-50%) rotate(calc(var(--actualPercent) * 3.6deg));
+        transform-origin: 50% 60px;
+    }
+.percentage {
+        grid-area: 1 / 1;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--color-black);
+        z-index: 1;
+    }
+
+.stat-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+@media (max-width: 1300px){
+    .experience-text{
+        margin-left: 2rem;
+    }
+}
+@media (max-width: 768px) {
+    .experience-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .stats-container {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    
+    .experience-text h2 {
+        font-size: 32px;
+    }
+}
+
+</style>

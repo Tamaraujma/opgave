@@ -6,6 +6,7 @@ import CEOImage from "@assets/images/ceo.png";
 
 <section class="hero">
   <div class="hero-content">
+    <div class="dots-pattern"></div>
     <h1>Empowering Your Business Growth</h1>
     <p>
       Discover tailored strategies and expert insights to take your business to
@@ -14,8 +15,9 @@ import CEOImage from "@assets/images/ceo.png";
     </p>
     <a href="#0">Book a Meeting</a>
   </div>
+  <div class="hero-image">
   <Image src={CEOImage} alt="CEO" />
-
+</div>
   <Services />
 </section>
 
@@ -24,7 +26,160 @@ import CEOImage from "@assets/images/ceo.png";
   @layer components {
     .hero {
       background-color: #f3f4f6;
-      padding: 2rem;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+    .hero-content{
+      background-color: var(--color-black);
+      color: var(--color-white);
+      text-align: left;
+      padding: 4rem 8rem 2rem 8rem;
+      display: flex;
+       flex-direction: column;
+      justify-content: flex-start; /* Start fra toppen */
+       max-width: 800px;
+    }
+
+    .dots-pattern {
+      position: absolute;
+      top: 3rem;
+      left: -4rem;
+      width: 180px;
+      height: 200px;
+      background-image: radial-gradient(circle, var(--color-yellow) 2px, transparent 2px);
+      background-size: 20px 20px;
+      z-index: 1;
+      opacity: 0.8;
+    }
+     .hero-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    h1{
+      font-size: 45px;
+      font-family: "Cabin", sans-serif;
+      font-weight: 700;
+      line-height: 116%;
+      font-style: normal;
+      margin: 0 0 2rem 0;
+
+    }
+    p{
+     font-size: 16px;
+      font-family: "Lato", sans-serif;
+      font-weight: lighter;
+      line-height: 147%;
+      margin: 0 0 2rem 0;
+    }
+    a{
+      text-decoration: none;
+      padding: 16px 31px;
+      background-color: var(--color-white);
+      color: var(--color-black);
+      border-radius: 42px;
+      gap: 10px;
+      align-items: flex-start;
+      font-family: "Lato", sans-serif;
+      font-size: 16px;
+      line-height: 160%;
+      display: inline-block; /* Gør den til inline-block */
+      width: fit-content; /* Kun så bred som indholdet */
+      transition: all 0.3s ease;
+      margin-top: 0;
+    }
+     a:hover {
+      background-color: var(--color-yellow);
+      transform: translateY(-2px);
+    }
+     /* Services positioning */
+    .hero :global(.services) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-content {
+        padding: 4rem 4rem 2rem 4rem;
+      }
+      
+      .hero-content h1 {
+        font-size: 35px;
+      }
+
+      .dots-pattern {
+        width: 10px;
+        height: 200px;
+        left: -2rem;
+      }
+    }
+
+     @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        min-height: auto;
+      }
+      
+      .hero-content {
+        padding: 3rem 2rem 2rem 2rem;
+        max-width: 100%;
+        order: 2;
+      }
+      
+      .hero-image {
+        order: 1;
+        min-height: 300px;
+      }
+      
+      .dots-pattern{
+        display: none;
+      }
+      h1 {
+        font-size: 30px;
+        margin: 0 0 1.5rem 0;
+      }
+      
+      p {
+        font-size: 14px;
+        margin: 0 0 1.5rem 0;
+      }
+      
+      a {
+        padding: 12px 24px;
+        font-size: 16px;
+      }
+    }
+
+     @media (max-width: 480px) {
+      .hero-content {
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+      }
+      
+      h1 {
+        font-size: 28px;
+      }
+      
+      p {
+        font-size: 14px;
+      }
+      
+      .hero-image {
+        min-height: 250px;
+      }
     }
   }
+
+  
+  
 </style>

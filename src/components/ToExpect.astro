@@ -1,0 +1,237 @@
+---
+import checkmarkIcon from '../icons/checkmark.svg';
+import DynamicIcon from './helpers/DynamicIcon.astro';
+import DynamicImage from './helpers/DynamicImage.astro';
+---
+
+<section class="to-expect">
+    <div class="img-container">
+        <div class="dots-pattern"></div>
+        <div class="green-box"></div>
+        <img src="/src/data/images/Photo.png" alt="">
+    </div>  
+    <div class="text-content">
+        <h3>Well work with you</h3>
+        <h2>What to Expect</h2>
+        <p>Our collaboration is built on transparency, efficiency, and measurable results. Together, we create strategies tailored to your unique needs and goals.</p>
+        <ul>
+            <li>
+               <div class="checkmark">
+                    <img src="/src/icons/checkmark.svg" alt="checkmark">
+                </div>
+                Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes.
+            </li>
+            <li>
+                <div class="checkmark">
+                    <img src="/src/icons/checkmark.svg" alt="checkmark">
+                </div>
+                Identify opportunities to optimize processes and implement impactful solutions with measurable results.
+            </li>
+        </ul>
+    </div>
+
+</section>
+
+<style>
+    .to-expect {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 15rem;
+}
+.img-container {
+    position: relative;
+    flex: 1;
+}
+.dots-pattern {
+    position: absolute;
+    top: -5rem;
+    left: -5rem;
+    width: 300px;
+    height: 300px;
+    background-image: radial-gradient(circle, #D4A574 2px, transparent 2px);
+    background-size: 20px 20px;
+    z-index: -1;
+}
+
+.green-box{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #4EAF4E;
+    top: -2rem;
+    left: -2rem;
+    z-index: -1;
+    border-radius: 20px;
+}
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.text-content{
+    flex: 1;
+    padding-left: 2rem;
+}
+
+.text-content h3{
+    color: #181818;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.text-content h2{
+    font-size: 45px;
+    font-family: "Cabin", sans-serif;
+    font-weight: 700;
+    line-height: 116%;
+    margin-bottom: 1.5rem;
+}
+
+.text-content p{
+    color: #595566;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+.text-content ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.text-content li{
+    color: #595566;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 16px;
+    line-height: 1.6;
+}
+.checkmark {
+    background-color: #7CB342;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.checkmark img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .to-expect {
+        gap: 3rem;
+        padding: 3rem 2rem;
+        margin-top: 10rem;
+    }
+    
+    .text-content h2 {
+        font-size: 36px;
+    }
+    
+    .img-container img {
+        height: 350px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .to-expect {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1rem;
+        margin-top: 5rem;
+    }
+    
+    .text-content {
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .text-content h2 {
+        font-size: 28px;
+    }
+    
+    .text-content h3 {
+        font-size: 14px;
+    }
+    
+    .text-content p {
+        font-size: 14px;
+    }
+    
+    .text-content li {
+        font-size: 14px;
+        text-align: left;
+    }
+    
+    .img-container img {
+        height: 300px;
+    }
+    
+    .dots-pattern {
+        width: 150px;
+        height: 150px;
+        background-size: 15px 15px;
+    }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+    .to-expect {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+    
+    .text-content h2 {
+        font-size: 24px;
+    }
+    
+    .text-content h3 {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+    
+    .img-container img {
+        height: 250px;
+        border-radius: 15px;
+    }
+    
+    .dots-pattern {
+        width: 100px;
+        height: 100px;
+        background-size: 12px 12px;
+        top: -1rem;
+        left: -1rem;
+    }
+    
+    .checkmark {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .checkmark img {
+        width: 12px;
+        height: 12px;
+    }
+}
+</style>

@@ -1,0 +1,48 @@
+---
+import coreValuesData from "@data/coreValues.json";
+console.log(coreValuesData);
+---
+
+<section class="core-values">
+    <div class="container">
+        <div class="header">
+        <h3>GROWING WITH OUR CLIENTS</h3>
+        <h2>{coreValuesData.title}</h2>
+        <h3>{coreValuesData.subtitle}</h3>
+        <button>{coreValuesData.button.text}</button>
+        </div>
+
+          <div class="values-grid">
+            {coreValuesData.values.map((value) => (
+                <div class="values-card">
+                    <img src={`/src/icons/${value.icon}.svg`} alt={value.title} />
+                    <h3>{value.title}</h3>
+                    <p>{value.description}</p>
+                    <a href={value.link.url}>{value.link.text}</a>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .core-values{
+        background-color: var(--color-black);
+        padding: 80px 0;
+        color: var(--color-white);
+    }
+
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .header{
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+</style>
