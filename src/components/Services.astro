@@ -124,13 +124,32 @@ console.log(servicesData);
      /* Small tablet */
     @media (max-width: 768px) {
       ul {
-        bottom: -120px;
+          position: static;
+        bottom: 0;
+        margin-top: 2rem;
         gap: 1rem;
+        padding: 1rem;
+        grid-template-columns: 1fr;
       }
       
       li {
         padding: 1.5rem;
         min-height: 160px;
+      }
+
+        h2 {
+        font-size: 20px;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 1.5rem;
+      }
+
+      a {
+        padding: 12px 20px;
+        font-size: 14px;
       }
     }
 

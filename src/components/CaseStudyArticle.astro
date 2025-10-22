@@ -6,8 +6,10 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 ---
 
 <article>
-  <header>
-    <DynamicImage imagePath={image} altText={caseName} />
+  <div class="image-container">
+    <header>
+      <DynamicImage imagePath={image} altText={caseName} />
+    </header>
     <div class="case-details">
       <dl>
         <div>
@@ -25,7 +27,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
       </dl>
       <a href="#0" class="button">{buttonLabel}</a>
     </div>
-  </header>
+  </div>
   {
     caseStudy.sections.map((section) => (
       <section>
@@ -64,4 +66,190 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
   }
 </article>
 
-<style></style>
+<style>
+  article {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+   .image-container {
+    position: relative;
+    margin-bottom: 8rem;
+    max-width: 1000px;
+  }
+
+  header {
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 5rem;
+  }
+
+   header img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+  }
+
+   .case-details {
+    position: absolute;
+    bottom: -80px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 900px;
+    background: black;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-radius: 20px;
+  }
+
+   dl {
+    display: flex;
+    gap: 3rem;
+    margin: 0;
+  }
+
+  dl div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  dt {
+    font-size: 0.875rem;
+    color: #ccc;
+    margin-bottom: 0.25rem;
+    font-weight: 400;
+  }
+
+    dd {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+  }
+
+  .button {
+    background: #f5c842;
+    color: #000;
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    font-size: 14px
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+  }
+
+  .button:hover {
+    background: #e5b332;
+  }
+
+  section {
+    margin-bottom: 3rem auto;
+    text-align: left;
+  }
+
+  h2, h3 {
+    color: #181818;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+    p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #595566;
+  }
+
+  ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    color: #595566;
+  }
+
+  section img {
+    margin: 2rem auto;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+      article {
+      padding: 1rem;
+    }
+
+    .image-container {
+      margin-bottom: 6rem;
+    }
+
+    header img {
+      height: 250px;
+    }
+
+    .case-details {
+      position: static;
+      transform: none;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 1.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    dl {
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+    }
+    
+    article {
+      padding: 1rem;
+    }
+
+    .image-container {
+      margin-bottom: 6rem;
+    }
+
+    header img {
+      height: 250px;
+    }
+
+    .case-details {
+      position: static;
+      transform: none;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 1.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    dl {
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+    }
+     h2 {
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+  }
+</style>

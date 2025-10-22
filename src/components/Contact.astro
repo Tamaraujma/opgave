@@ -1,0 +1,241 @@
+---
+
+---
+
+<section class="contact">
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>PROCESS</h3>
+                <h2>Contact Us. It's Easy.</h2>
+                <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative.</p>
+
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon phone">
+                        <img src="/src/icons/phone.svg" alt="">
+                            </div>
+                        <div class="contact-text">
+                            <span class="label">Call Today</span>
+                            <span class="value">+1 800 100 900</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon clock">
+                        <img src="/src/icons/clock.svg" alt="">
+                            </div>
+                        <div class="contact-text">
+                            <span class="label">Monday To Friday</span>
+                            <span class="value">9AM - 5PM</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon location">
+                        <img src="/src/icons/pin.svg" alt="">
+                        </div>
+                        <div class="contact-text">
+                            <span class="label">USA Office</span>
+                            <span class="value">195 Devonshire St Boston, MA 02110</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-images">
+                <div class="image-grid">
+                    <div class="main-image">
+                         <div class="green-background"></div>
+                        <img src="/src/data/images/kvinde.jpg" alt="Professional woman working" />
+                    </div>
+                    <div class="small-images">
+                        <img src="/src/data/images/2kvinder.jpg" alt="Team meeting" />
+                        <img src="/src/data/images/hands.jpg" alt="Business discussion" />
+                    </div>
+                </div>
+                <div class="pattern-dots"></div>
+            </div>
+    </div>
+</section>
+
+<style>
+    .contact{
+        padding: 80px 0;
+        background-color: var(--color-light-grey);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+        .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .contact-info h3 {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .contact-info h2 {
+        font-size: 40px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 25px;
+        line-height: 1.2;
+    }
+
+     .contact-info p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 50px;
+        max-width: 400px;
+    }
+
+    .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .contact-icon{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+
+     .contact-icon.phone {
+        background-color: #FFECBB;
+        color: #DEAA27;
+    }
+
+    .contact-icon.clock {
+        background-color: #A4EDA4;
+        color: #4EAF4E;
+    }
+
+    .contact-icon.location {
+        background-color: #EAEAEA;
+        color: #181818;
+    }
+     .contact-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+     .contact-text .label {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 5px;
+    }
+
+    .contact-text .value {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+    }
+    .contact-images {
+        position: relative;
+    }
+
+    .image-grid {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        gap: 20px;
+        align-items: start;
+    }
+
+    .main-image {
+        position: relative;
+    }
+
+    .green-background {
+        position: absolute;
+        top: 300px;
+        left: -48px;
+        width: 70%;
+        height: 30%;
+        background-color: #4EAF4E;
+        border-radius: 20px;
+        z-index: 1;
+    }
+
+    .main-image img {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .small-images {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .small-images img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+     .pattern-dots {
+        position: absolute;
+        top: -50px;
+        right: -60px;
+        width: 300px;
+        height: 300px;
+        background-image: radial-gradient(circle, #61561c 2px, transparent 2px);
+        background-size: 20px 20px;
+        opacity: 0.3;
+        z-index: 1;
+        }
+
+    @media (max-width: 768px) {
+        .contact-content {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h2 {
+            font-size: 36px;
+        }
+
+        .image-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .small-images {
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .small-images img {
+            height: 120px;
+        }
+    }
+</style>

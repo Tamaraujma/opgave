@@ -1,0 +1,188 @@
+---
+import employeesData from "@data/employees.json";
+console.log(employeesData);
+---
+
+<section class="employees">
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="header-text">
+        <h2>Meet our great team</h2>
+        <p>Welcome to our amazing team! We are a group of passionate individuals dedicated to excellence and innovation. Each member brings unique skills and experiences, working together to achieve our goals. Join us as we embark on exciting projects and create lasting impacts.</p>
+    </div>
+                <button>Join our team</button>
+            </div>
+
+            <div class="employees-flex">
+                {employeesData.map((employee, index) => (
+                    <div class="employee-card">
+                        <div class="employee-image">
+                            <img src={employee.img} alt={employee.name} />
+                            <div class={`employee-badge ${index === 0 ? 'first-employee' : ''}`}>
+                                <span>{employee.title}</span>
+                            </div>
+                        </div>
+                        <div class="employee-info">
+                            <h4>{employee.name}</h4>
+                            <p>{employee.description}</p>
+                            <div class="social-links">
+                                {employee.social_links.map((social) => (
+                                    <a href={social.url} target="_blank" class="social-icon">
+                                        <img src={`/src/icons/${social.platform}.svg`} alt={social.platform} />
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.employees {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.header-text {
+    flex: 1;
+    max-width: 60%;
+}
+
+.header-content h3 {
+    color: #666;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+.header-content h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    color: black;
+    text-align: left;
+    max-width: 600px;
+}
+
+.header-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    max-width: 800px;
+    margin: 0;
+    text-align: left;
+    max-width: 700px;
+}
+
+.header-content button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 24px;
+    align-items: right;
+}
+
+.employees-flex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.employee-card {
+    text-align: center;
+    max-width: 350px;
+}
+
+.employee-image {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.employee-image img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.employee-badge {
+    position: absolute;
+    bottom: 16px;
+    left: 75%;
+    transform: translateX(-50%);
+    background: black;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.employee-badge.first-employee {
+    background: var(--color-yellow); /* Brug direkte hex farve i stedet for variabel */
+    color: #333;
+}
+
+.employee-info h4 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.employee-info p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.social-icon:hover {
+    background: #333;
+}
+.social-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+</style>

@@ -6,19 +6,23 @@ console.log(coreValuesData);
 <section class="core-values">
     <div class="container">
         <div class="header">
-        <h3>GROWING WITH OUR CLIENTS</h3>
-        <h2>{coreValuesData.title}</h2>
-        <h3>{coreValuesData.subtitle}</h3>
-        <button>{coreValuesData.button.text}</button>
+            <div class="header-content">
+                <h3>GROWING WITH OUR CLIENTS</h3>
+                <h2>{coreValuesData.title}</h2>
+                <p>{coreValuesData.subtitle}</p>
+            </div>
+            <button class="cta-button">{coreValuesData.button.text}</button>
         </div>
 
-          <div class="values-grid">
+        <div class="values-grid">
             {coreValuesData.values.map((value) => (
                 <div class="values-card">
-                    <img src={`/src/icons/${value.icon}.svg`} alt={value.title} />
+                    <div class="card-icon">
+                        <img src={`/src/icons/${value.icon}.svg`} alt={value.title} />
+                    </div>
                     <h3>{value.title}</h3>
                     <p>{value.description}</p>
-                    <a href={value.link.url}>{value.link.text}</a>
+                    <a href={value.link.url} class="read-more">{value.link.text} →</a>
                 </div>
             ))}
         </div>
@@ -27,7 +31,7 @@ console.log(coreValuesData);
 
 <style>
     .core-values{
-        background-color: var(--color-black);
+        background-color: black;
         padding: 80px 0;
         color: var(--color-white);
     }
@@ -43,6 +47,144 @@ console.log(coreValuesData);
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+    .header-content {
+        flex: 1;
+        max-width: 500px;
     }
 
+    .header h3 {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: var(--color-white);
+        margin-bottom: 15px;
+        opacity: 0.8;
+    }
+
+    .header h2 {
+        font-size: 42px;
+        font-weight: 700;
+        color: var(--color-white);
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .header p {
+        font-size: 16px;
+        color: var(--color-white);
+        opacity: 0.8;
+        line-height: 1.6;
+        max-width: 500px;
+    }
+
+
+    .cta-button {
+        background-color: var(--color-white);
+        color: var(--color-black);
+        border: none;
+        padding: 15px 30px;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+     .cta-button:hover {
+        background-color: var(--color-yellow);
+        transform: translateY(-2px);
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+
+    .values-card {
+        background: var(--color-white);
+        color: var(--color-black);
+        padding: 40px 30px;
+        border-radius: 16px;
+        text-align: left;
+        transition: all 0.3s ease;
+    }
+
+    .values-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        background-color: black;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .card-icon img {
+        width: 30px;
+        height: 30px;
+        filter: invert(1);
+    }
+     .values-card h3 {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--color-black);
+        margin-bottom: 20px;
+    }
+
+    .values-card p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 25px;
+    }
+
+    .read-more{
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        color: var(--color-black);
+    }
+
+    .read-more:hover {
+        color: var(--color-yellow);
+    }
+
+     @media (max-width: 1200px) {
+        .values-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .header {
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+        }
+
+        .header h2 {
+            font-size: 36px;
+        }
+
+        .values-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .values-card {
+            padding: 30px 25px;
+        }
+    }
 </style>

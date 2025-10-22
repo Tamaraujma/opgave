@@ -1,0 +1,213 @@
+---
+
+---
+<section class="vision-section">
+    <div class="container">
+        <!-- Left content -->
+        <div class="vision-content">
+            <div class="vision-badge">OUR VISION</div>
+            <h2 class="vision-title">Turn your ideas into reality.</h2>
+            <p class="vision-description">
+                Capitalize on low hanging fruit to identify a ballpark value added activity beta test.
+                Override the digital divide with additional from DevOps.
+            </p>
+            
+            <div class="vision-points">
+                <div class="point">
+                    <img src="/src/icons/checkmark.svg" alt="chechmark" class="checkmark">
+                    <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.</p>
+                </div>
+                <div class="point">
+                    <img src="/src/icons/checkmark.svg" alt="chechmark" class="checkmark">
+                    <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right image -->
+        <div class="vision-image">
+            <div class="pattern-dots"></div>
+            <div class="green-box"></div>
+            <img src="/src/data/images/vision.jpg" alt="Team working together" />
+            
+        </div>
+    </div>
+    
+    <!-- Stats section -->
+    <div class="stats-section">
+        <div class="stat">
+            <div class="stat-number">1128+</div>
+            <div class="stat-label">Successful Work</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">908+</div>
+            <div class="stat-label">Team member</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">258+</div>
+            <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">564+</div>
+            <div class="stat-label">Creative Idea</div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .vision-section{
+         padding: 5rem 2rem;
+         background-color: var(--color-white);
+    }
+
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        margin-bottom: 4rem;
+    }
+
+     .vision-content {
+        padding-right: 2rem;
+    }
+
+     .vision-badge {
+        color: var(--color-black);
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+    }
+
+    .vision-title {
+        font-size: 40px;
+        font-weight: 700;
+        color: var(--color-black);
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+
+     .vision-description {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+    }
+
+    .vision-points {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .point {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .checkmark {
+        background-color: #22c55e;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        padding: 4px;
+        flex-shrink: 0;
+        margin-top: 0.25rem;
+    }
+
+    .point p {
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .vision-image {
+        position: relative;
+    }
+
+    .vision-image img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .pattern-dots {
+        position: absolute;
+        top: -50px;
+        right: -60px;
+        width: 300px;
+        height: 300px;
+        background-image: radial-gradient(circle, #61561c 2px, transparent 2px);
+        background-size: 20px 20px;
+        opacity: 0.3;
+        z-index: 1;
+        }
+
+    /* .green-box{ /*virker ikke
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: #4EAF4E;
+        top: -50px;
+        right: -30px;
+        width: 300px;
+        height: 300px;
+        z-index: -1;
+        border-radius: 20px;
+    } */ 
+
+    .stats-section {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+     .stat {
+        padding: 1rem;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        color: #666;
+        font-size: 1.1rem;
+    }
+
+
+    @media (max-width: 768px) {
+        .container {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .vision-content {
+            padding-right: 0;
+        }
+        
+        .vision-title {
+            font-size: 2rem;
+        }
+        
+        .stats-section {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+        }
+    }
+</style>

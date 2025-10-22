@@ -2,15 +2,84 @@
 import Layout from "@layouts/Layout.astro";
 import CaseStudyArticle from "@components/CaseStudyArticle.astro";
 import HeroBgWrapper from "@components/helpers/HeroBgWrapper.astro";
+import DynamicImage from "../components/helpers/DynamicImage.astro";
 ---
 
 <Layout>
-  <HeroBgWrapper imagePath="test.png">
-    <header>
-      <p>Case Studies</p>
+  <header class="hero-header">
+    <DynamicImage 
+      imagePath="/src/data/images/hero_3.jpg"
+      altText="Case study illustration"
+      class="hero-background"
+      width={2132}
+      height={1421}
+    />
+    <div class="hero-content">
+      <span class="case-label">CASE STUDIES</span>
       <h1>Taxes & Efficiency</h1>
-    </header>
-  </HeroBgWrapper>
+    </div>
+  </header>
 
   <CaseStudyArticle />
 </Layout>
+
+<style>
+  .hero-header {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+    .hero-content {
+    position: absolute;
+    top: 60%;
+    left: 4rem;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 50px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+  }
+
+  .case-label {
+    display: inline-block;
+    background: #f5c842;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #181818;
+    margin: 0;
+    line-height: 1.2;
+  }
+    @media (max-width: 768px) {
+    .hero-content {
+      left: 2rem;
+      right: 2rem;
+      padding: 1.5rem 2rem;
+    }
+    
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

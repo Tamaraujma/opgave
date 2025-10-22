@@ -90,6 +90,15 @@ console.log(Data);
         background-color: var(--color-yellow);
         color: var(--color-black);
     }
+     /* Gør pilen hvid i prev button */
+    .nav-btn.prev img {
+        filter: brightness(0) invert(1);
+    }
+
+    /* Gør pilen sort i next button */
+    .nav-btn.next img {
+        filter: brightness(0);
+    }
 
     .nav-btn:hover {
         transform: scale(1.05);
