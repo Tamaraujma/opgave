@@ -14,10 +14,10 @@ console.log(Data);
 
             <div class="navigation-buttons">
                 <button class="nav-btn prev">
-                    <img src="/src/icons/arrow-left.svg" alt="Previous" />
+                    <img src="/public/icons/arrow-left.svg" alt="Previous" />
                 </button>
                 <button class="nav-btn next">
-                    <img src="/src/icons/arrow--right.svg" alt="Next" />
+                    <img src="/public/icons/arrow--right.svg" alt="Next" />
                 </button>
             </div>
         </div>
@@ -27,7 +27,7 @@ console.log(Data);
                 {Data.values.map((item) => (
                     <div class="projection-card">
                         <div class="card-icon">
-                            <img src={`/src/icons/${item.icon}.svg`} alt={item.title} />
+                            <img src={`/public/icons/${item.icon}.svg`} alt={item.title} />
                         </div>
                         <h3>{item.title}</h3>
                         <p>{item.description}</p>

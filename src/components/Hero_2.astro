@@ -1,9 +1,15 @@
 ---
-
+import DynamicImage from "@components/helpers/DynamicImage.astro";
 ---
 
 <section class="hero">
-    <img src="/src/data/images/hero.jpg" alt="Business team meeting" class="hero-image">
+  <DynamicImage 
+        imagePath="/src/data/images/hero.webp"
+        altText="Business team meeting"
+        class="hero-image"
+        width={1920}
+        height={1080}
+    />
 
     <div class="hero-content">
         <div class="badge">ABOUT</div>

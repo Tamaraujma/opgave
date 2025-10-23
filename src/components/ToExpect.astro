@@ -1,6 +1,4 @@
 ---
-import checkmarkIcon from '../icons/checkmark.svg';
-import DynamicIcon from './helpers/DynamicIcon.astro';
 import DynamicImage from './helpers/DynamicImage.astro';
 ---
 
@@ -8,7 +6,12 @@ import DynamicImage from './helpers/DynamicImage.astro';
     <div class="img-container">
         <div class="dots-pattern"></div>
         <div class="green-box"></div>
-        <img src="/src/data/images/Photo.png" alt="">
+         <DynamicImage 
+            imagePath="/src/data/images/Photo.webp"
+            altText="Team collaboration meeting"
+            width={500}
+            height={400}
+        />
     </div>  
     <div class="text-content">
         <h3>Well work with you</h3>
@@ -17,13 +20,13 @@ import DynamicImage from './helpers/DynamicImage.astro';
         <ul>
             <li>
                <div class="checkmark">
-                    <img src="/src/icons/checkmark.svg" alt="checkmark">
+                    <img src="/icons/checkmark.svg" alt="checkmark">
                 </div>
                 Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes.
             </li>
             <li>
                 <div class="checkmark">
-                    <img src="/src/icons/checkmark.svg" alt="checkmark">
+                    <img src="/icons/checkmark.svg" alt="checkmark">
                 </div>
                 Identify opportunities to optimize processes and implement impactful solutions with measurable results.
             </li>

@@ -1,4 +1,5 @@
 ---
+import DynamicImage from "@components/helpers/DynamicImage.astro";
 
 ---
 <section class="vision-section">
@@ -14,11 +15,11 @@
             
             <div class="vision-points">
                 <div class="point">
-                    <img src="/src/icons/checkmark.svg" alt="chechmark" class="checkmark">
+                    <img src="/icons/checkmark.svg" alt="chechmark" class="checkmark">
                     <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.</p>
                 </div>
                 <div class="point">
-                    <img src="/src/icons/checkmark.svg" alt="chechmark" class="checkmark">
+                    <img src="/icons/checkmark.svg" alt="chechmark" class="checkmark">
                     <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.</p>
                 </div>
             </div>
@@ -28,7 +29,12 @@
         <div class="vision-image">
             <div class="pattern-dots"></div>
             <div class="green-box"></div>
-            <img src="/src/data/images/vision.jpg" alt="Team working together" />
+             <DynamicImage 
+                imagePath="/src/data/images/vision.webp"
+                altText="Team working together"
+                width={500}
+                height={400}
+            />
             
         </div>
     </div>
