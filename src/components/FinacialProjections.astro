@@ -14,10 +14,10 @@ console.log(Data);
 
            <div class="navigation-buttons">
                 <button class="nav-btn prev">
-                    <span class="arrow-left">←</span>
+                    <img src="/icons/arrow-left.svg" alt="Previous" />
                 </button>
                 <button class="nav-btn next">
-                    <span class="arrow-right">→</span>
+                    <img src="/icons/arrow--right.svg" alt="Next" />
                 </button>
             </div>
         </div>
@@ -69,7 +69,8 @@ console.log(Data);
         display: flex;
         gap: 10px; 
     }
-    .nav-btn{
+  
+     .nav-btn{
         width: 70px;
         height: 70px;
         border-radius: 50%;
@@ -83,24 +84,23 @@ console.log(Data);
 
     .nav-btn.prev {
         background-color: var(--color-black);
-        color: var(--color-white);
     }
 
     .nav-btn.next {
         background-color: var(--color-yellow);
-        color: var(--color-black);
-    }
-    .arrow-right {
-        font-size: 20px;
-        font-weight: bold;
-        color: var(--color-black);
     }
 
-    .arrow-left,
-    .arrow-right {
-        font-size: 24px;
-        font-weight: bold;
-        line-height: 1;
+    .nav-btn img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-btn.prev img {
+        filter: invert(1); /* Gør pilen hvid på sort baggrund */
+    }
+
+    .nav-btn.next img {
+        filter: none; /* Behold sort pil på gul baggrund */
     }
     .nav-btn:hover {
         transform: scale(1.05);
